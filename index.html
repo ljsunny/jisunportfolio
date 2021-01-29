@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <link>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jisun's Portfolio</title>
@@ -16,32 +16,48 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
-
   </head>
   <body>
-     <!-- ctrl+/ 커멘드 남길수있음 -->
+    <!-- ctrl+/ 커멘드 남길수있음 -->
     <!-- section#id이름 엔터 치면 아래것들 자동 생성 -->
     <!-- .navbar__logo <-클래스 생성시 -->
     <!-- Navbar -->
     <nav id="navbar">
-        <div class="navbar__logo">
-            <img src="imgs/favicon.png" alt="" srcset="imgs/favicon.png 14x">
-            <a href="#">Jisun</a>
-        </div>
-        <div class="navbar__menu">
-            <ul class="navbar__menu">
-                <li class="navbar__menu__item">Home</li>
-                <li class="navbar__menu__item">About</li>
-                <li class="navbar__menu__item">Skills</li>
-                <li class="navbar__menu__item">My work</li>
-                <li class="navbar__menu__item">Testimonial</li>
-                <li class="navbar__menu__item">Contact</li>
-            </ul>
-
-        </div>
+      <div class="navbar__logo">
+        <img
+          src="imgs/favicon.png"
+          alt=""
+          srcset="imgs/favicon.png 14x"
+          class="nav__icon"
+        />
+        <a href="#">Jisun</a>
+      </div>
+      <div class="navbar__menu">
+        <ul class="navbar__menu">
+          <li class="navbar__menu__item">Home</li>
+          <li class="navbar__menu__item">About</li>
+          <li class="navbar__menu__item">Skills</li>
+          <li class="navbar__menu__item">My work</li>
+          <li class="navbar__menu__item">Testimonial</li>
+          <li class="navbar__menu__item">Contact</li>
+        </ul>
+      </div>
     </nav>
+    <section id="home">
+      <img
+        src="imgs/profile.png"
+        alt="Jisun's Profile photo"
+        class="home__avatar"
+      />
+      <h1 class="home__title">
+        Hello, <br />
+        I'm Dream Coder
+      </h1>
+      <h2 class="home__descripttion">백엔드와 프론트엔드 모두 갖춘 개발자!</h2>
+      <button class="home__contact">Contact Me</button>
+    </section>
     <!-- About -->
     <section id="about"></section>
     <!-- Skills -->
@@ -52,6 +68,5 @@
     <section id="testimonials"></section>
     <!-- Contact -->
     <section id="contact"></section>
-
   </body>
 </html>
