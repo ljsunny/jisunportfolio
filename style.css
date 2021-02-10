@@ -58,6 +58,28 @@ button {
   outline: none;
 }
 
+/* Typography  */
+h1 {
+  font-size: var(--font-large);
+  font-weight: var(--weight-bold);
+  color: var(--color-black);
+  margin: 16px 0px;
+}
+
+h2 {
+  font-size: var(--font-medium);
+  font-weight: var(--font-regular);
+  color: var(--color-black);
+  margin: 8px 0;
+}
+
+p {
+  font-size: var(--font-regular);
+  font-weight: var(--font-regular);
+  color: var(--color-black);
+  margin: 4px 0;
+}
+
 /* Navbar */
 #navbar {
   display: flex;
@@ -338,26 +360,45 @@ button {
   margin-top: 10px;
   background-color: var(--color-dark-white);
 }
-
-/* Typography  */
-/* h1{
-    font-size: var(--font-large);
-    font-weight: var(--weight-bold);
-    color: var(--color-black)
-    margin: 16px 0px;
+/* Testimanial */
+#testimonials {
+  background-color: lightgrey;
+}
+.testimonials {
+  margin: 40px;
 }
 
-h2{
-    font-size: var(--font-medium);
-    font-weight: var(--font-regular);
-    color: var(--color-black);
-    margin:8px 0;
+.testimonial {
+  display: flex;
+  margin: 32px 0;
+}
+.testimonial:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.testimonial__avatar {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+.testimonial__avatar:nth-child(odd) {
+  margin-right: 40px;
+}
+.testimonial__avatar:nth-child(even) {
+  margin-left: 40px;
+  flex-direction: row-reverse;
+}
+.testimonial__speech-bubble {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--color-white);
+  padding: 18px;
+  border-radius: var(--size-border-radius);
 }
 
-p{
-   font-size: var(--font-regular);
-   font-weight: var(--font-regular);
-   color:var(--color-black);
-   margin: 4px 0;
+.testimonial__speech-bubble p {
+  color: var(--color-light-grey);
 }
- */
+.testimonial__speech-bubble .name {
+  color: var(--color-pink);
+}
