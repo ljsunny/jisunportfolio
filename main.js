@@ -1,14 +1,27 @@
 "use strict";
 // navbar를 투명하게
-
-var nav = document.querySelector("#navbar");
-var nav_height = nav.getBoundingClientRect().height;
+const nav = document.querySelector("#navbar");
+const navHeight = nav.getBoundingClientRect().height;
 
 document.addEventListener("scroll", () => {
-  console.log(nav_height);
-  if (window.scrollY > nav_height) {
+  console.log(navHeight);
+  if (window.scrollY > navHeight) {
     nav.classList.add("navbar--dark");
   } else {
     nav.classList.remove("navbar--dark");
   }
+});
+
+//section으로 이동
+const navbarMenu = document.querySelector(".navbar__menu");
+
+navbarMenu.addEventListener("click", (event) => {
+  console.log(event.target.dataset.link);
+  const target = event.target;
+  const link = target.dataset.link;
+  if (link == null) {
+    return;
+  }
+  const clickItem = document.querySelector(link);
+  clickItem.scrollIntoView({ behavior: "smooth" });
 });
