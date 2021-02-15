@@ -142,6 +142,7 @@ p {
   padding: 40px;
   padding-top: 120px;
   text-align: center;
+  transition: all var(--animation-duration) ease-in;
 }
 
 .home__avatar {

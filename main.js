@@ -4,7 +4,7 @@ const nav = document.querySelector("#navbar");
 const navHeight = nav.getBoundingClientRect().height;
 
 document.addEventListener("scroll", () => {
-  console.log(navHeight);
+  //console.log(navHeight);
   if (window.scrollY > navHeight) {
     nav.classList.add("navbar--dark");
   } else {
@@ -37,3 +37,12 @@ function scrollIntoView(selector) {
   const clickItem = document.querySelector(selector);
   clickItem.scrollIntoView({ behavior: "smooth" });
 }
+
+// scrolling 시 home 투명하게
+const home = document.querySelector(".home__container");
+const homeHeight = home.getBoundingClientRect().height;
+
+document.addEventListener("scroll", () => {
+  console.log(1 - window.scrollY / homeHeight);
+  home.style.opacity = 1 - window.scrollY / homeHeight;
+});
