@@ -46,3 +46,18 @@ document.addEventListener("scroll", () => {
   console.log(1 - window.scrollY / homeHeight);
   home.style.opacity = 1 - window.scrollY / homeHeight;
 });
+
+// 스크롤 시 arrow up 버튼 visible
+const upBtn = document.querySelector(".up__toggle-btn");
+document.addEventListener("scroll", () => {
+  if (window.scrollY > homeHeight / 2) {
+    upBtn.classList.add("visible");
+  } else {
+    upBtn.classList.remove("visible");
+  }
+});
+
+// arrow up 버튼 클릭 시 go to home
+upBtn.addEventListener("click", () => {
+  scrollIntoView("#home");
+});
