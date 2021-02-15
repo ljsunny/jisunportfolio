@@ -22,6 +22,18 @@ navbarMenu.addEventListener("click", (event) => {
   if (link == null) {
     return;
   }
-  const clickItem = document.querySelector(link);
-  clickItem.scrollIntoView({ behavior: "smooth" });
+  scrollIntoView(link);
 });
+
+// home의 contact me click 시 contact section으로 이동
+const contactBtn = document.querySelector(".home__contact");
+console.log(contactBtn);
+contactBtn.addEventListener("click", () => {
+  console.log(contactBtn.dataset.link);
+  scrollIntoView("#contact");
+});
+
+function scrollIntoView(selector) {
+  const clickItem = document.querySelector(selector);
+  clickItem.scrollIntoView({ behavior: "smooth" });
+}
