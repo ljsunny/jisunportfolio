@@ -33,11 +33,6 @@ contactBtn.addEventListener("click", () => {
   scrollIntoView("#contact");
 });
 
-function scrollIntoView(selector) {
-  const clickItem = document.querySelector(selector);
-  clickItem.scrollIntoView({ behavior: "smooth" });
-}
-
 // scrolling 시 home 투명하게
 const home = document.querySelector(".home__container");
 const homeHeight = home.getBoundingClientRect().height;
@@ -61,3 +56,30 @@ document.addEventListener("scroll", () => {
 upBtn.addEventListener("click", () => {
   scrollIntoView("#home");
 });
+
+const workCategories = document.querySelector(".work__categories");
+const projectContainer = document.querySelector(".work__projects");
+const projects = document.querySelectorAll(".project");
+
+workCategories.addEventListener("click", (event) => {
+  const filter =
+    event.target.dataset.filter || event.target.parentNode.dataset.filter;
+  projectContainer.classList.add("fade-out");
+  setTimeout(() => {
+    projects.forEach((project) => {
+      //console.log(project.dataset.category); arry형 foreach로
+      if (filter === "all" || filter === project.dataset.category) {
+        project.classList.remove("invisible");
+      } else {
+        project.classList.add("invisible");
+      }
+    });
+
+    projectContainer.classList.remove("fade-out");
+  }, 300);
+});
+
+function scrollIntoView(selector) {
+  const clickItem = document.querySelector(selector);
+  clickItem.scrollIntoView({ behavior: "smooth" });
+}
