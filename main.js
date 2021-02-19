@@ -19,10 +19,21 @@ navbarMenu.addEventListener("click", (event) => {
   console.log(event.target.dataset.link);
   const target = event.target;
   const link = target.dataset.link;
+  var active = document.querySelector(".navbar__menu__item.active");
+  console.log(active);
+  active.classList.remove("active");
+  target.classList.add("active");
   if (link == null) {
     return;
   }
   scrollIntoView(link);
+});
+
+//toggle 클릭시 버튼 활성화
+const navbarToggle = document.querySelector(".navbar__toggle-btn");
+console.log(navbarToggle);
+navbarToggle.addEventListener("click", () => {
+  console.log("click");
 });
 
 // home의 contact me click 시 contact section으로 이동
@@ -38,7 +49,7 @@ const home = document.querySelector(".home__container");
 const homeHeight = home.getBoundingClientRect().height;
 
 document.addEventListener("scroll", () => {
-  console.log(1 - window.scrollY / homeHeight);
+  //console.log(1 - window.scrollY / homeHeight);
   home.style.opacity = 1 - window.scrollY / homeHeight;
 });
 
@@ -57,6 +68,7 @@ upBtn.addEventListener("click", () => {
   scrollIntoView("#home");
 });
 
+//works 카테고리 클릭시 filtering
 const workCategories = document.querySelector(".work__categories");
 const projectContainer = document.querySelector(".work__projects");
 const projects = document.querySelectorAll(".project");
@@ -64,8 +76,16 @@ const projects = document.querySelectorAll(".project");
 workCategories.addEventListener("click", (event) => {
   const filter =
     event.target.dataset.filter || event.target.parentNode.dataset.filter;
+
   projectContainer.classList.add("fade-out");
+
+  const target =
+    event.target.nodeName === "BUTTON" ? event.target : event.target.parentNode;
+  const active = document.querySelector(".category__btn.active");
+  active.classList.remove("active");
   setTimeout(() => {
+    //주의) 코드가 한번에 읽어서 실행되는 것을 방지하기 위해 setTimeout 안에 후속 작업 코딩
+    target.classList.add("active");
     projects.forEach((project) => {
       //console.log(project.dataset.category); arry형 foreach로
       if (filter === "all" || filter === project.dataset.category) {
