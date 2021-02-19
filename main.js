@@ -19,13 +19,14 @@ navbarMenu.addEventListener("click", (event) => {
   console.log(event.target.dataset.link);
   const target = event.target;
   const link = target.dataset.link;
-  var active = document.querySelector(".navbar__menu__item.active");
+  const active = document.querySelector(".navbar__menu__item.active");
   console.log(active);
   active.classList.remove("active");
   target.classList.add("active");
   if (link == null) {
     return;
   }
+  navbarMenu.classList.remove("open");
   scrollIntoView(link);
 });
 
@@ -34,6 +35,7 @@ const navbarToggle = document.querySelector(".navbar__toggle-btn");
 console.log(navbarToggle);
 navbarToggle.addEventListener("click", () => {
   console.log("click");
+  navbarMenu.classList.toggle("open");
 });
 
 // home의 contact me click 시 contact section으로 이동
@@ -41,6 +43,7 @@ const contactBtn = document.querySelector(".home__contact");
 console.log(contactBtn);
 contactBtn.addEventListener("click", () => {
   console.log(contactBtn.dataset.link);
+
   scrollIntoView("#contact");
 });
 
