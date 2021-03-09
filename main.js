@@ -1,14 +1,18 @@
 "use strict";
+
 // navbar를 투명하게
 const nav = document.querySelector("#navbar");
 const navHeight = nav.getBoundingClientRect().height;
+const navText = nav.querySelector(".nav__text");
 
 document.addEventListener("scroll", () => {
   //console.log(navHeight);
   if (window.scrollY > navHeight) {
     nav.classList.add("navbar--dark");
+    navText.classList.add("dark");
   } else {
     nav.classList.remove("navbar--dark");
+    navText.classList.remove("dark");
   }
 });
 
@@ -56,6 +60,12 @@ document.addEventListener("scroll", () => {
   home.style.opacity = 1 - window.scrollY / homeHeight;
 });
 
+const fullHome = document.querySelector("#home");
+//로드될때 블러에서 선명하게
+window.addEventListener("load", () => {
+  console.log("page is fully loaded");
+  fullHome.classList.add("clear");
+});
 // 스크롤 시 arrow up 버튼 visible
 const upBtn = document.querySelector(".up__toggle-btn");
 document.addEventListener("scroll", () => {

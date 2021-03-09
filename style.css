@@ -5,14 +5,17 @@
   --color-white: #ffffff;
   --color-light-white: #eeeeee;
   --color-dark-white: #bdbdbd;
+  --color-beige: #f1eae2;
+  --color-dark-beige: #dbcdc3;
   --color-pink: #fe918d;
+  --color-red: #d95252;
   --color-dark-pink: #ff6863;
   --color-dark-grey: #4d4d4d;
   --color-grey: #616161;
   --color-light-grey: #7c7979;
-  --color-blue: #73aace;
+  --color-blue: #5296a5;
   --color-yellow: #fff7d1;
-  --color-orange: #feb546;
+  --color-orange: #f2c861;
   --color-black: #000000;
 
   /* Font size */
@@ -41,11 +44,12 @@
   box-sizing: border-box;
 }
 body {
+  position: relative;
   margin: 0;
 }
 a {
   text-decoration: none;
-  color: var(--color-white);
+  color: var(--color-dark-grey);
 }
 ul {
   list-style: none;
@@ -96,13 +100,14 @@ p {
   justify-content: space-between;
   background-color: transparent;
   align-items: center;
-  color: var(--color-white);
+  color: var(--color-red);
   padding: 16px;
   transition: all var(--animation-duration) ease-in;
 }
 #navbar.navbar--dark {
-  background-color: var(--color-pink);
+  background-color: var(--color-red);
   padding: 8px;
+  color: var(--color-white);
 }
 .navbar__menu {
   display: flex;
@@ -110,8 +115,15 @@ p {
 
 .navbar__logo {
   display: flex;
+  padding-left: 10px;
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
+}
+.nav__text {
+  color: var(--color-red);
+}
+.nav__text.dark {
+  color: var(--color-light-white);
 }
 .navbar__menu__item {
   padding: 8px 12px;
@@ -124,11 +136,11 @@ p {
 .navbar__menu__item.active {
   border: 1px solid var(--color-white);
   border-radius: var(--size-border-radius);
-  background-color: var(--color-dark-pink);
+  background-color: var(--color-dark-beige);
 }
 .navbar__menu__item:hover {
   border: 1px solid var(--color-white);
-  background-color: var(--color-dark-pink);
+  background-color: var(--color-dark-beige);
   border-radius: var(--size-border-radius);
 }
 .navbar__toggle-btn {
@@ -144,11 +156,14 @@ p {
 #home {
   background: url("imgs/homebackground.png") center/cover no-repeat;
   padding: 40px;
-  padding-top: 120px;
+  padding-top: 150px;
   text-align: center;
+  filter: blur(4px);
   transition: all var(--animation-duration) ease-in;
 }
-
+#home.clear {
+  filter: blur(0);
+}
 .home__avatar {
   width: 250px;
   height: 250px;
@@ -156,22 +171,26 @@ p {
   border: 2px solid var(--color-light-white);
 }
 
-.home__title,
+.home__title {
+  color: var(--color-black);
+}
 .home__description {
-  color: var(--color-white);
+  color: var(--color-dark-grey);
 }
 
 .home__contact {
-  color: var(--color-white);
+  color: var(--color-dark-grey);
   font-size: var(--font-regular);
   font-weight: var(--weight-bold);
   margin: 24px;
   padding: 8px 12px;
-  border: 2px solid var(--color-white);
+  border: 2px solid var(--color-light-grey);
   border-radius: var(--size-border-radius);
 }
 .home__contact:hover {
-  background-color: var(--color-dark-pink);
+  background-color: var(--color-red);
+  color: var(--color-white);
+  border-color: transparent;
 }
 /* About me */
 /* 전체 가운데 정렬 */
@@ -211,10 +230,10 @@ p {
   transition: all var(--animation-duration) ease;
 }
 .major__icon:hover {
-  border: 1px solid var(--color-pink);
+  border: 1px solid var(--color-orange);
 }
 .major__icon:hover i {
-  color: var(--color-pink);
+  color: var(--color-orange);
   transform: rotate(-30deg) scale(1.1);
 }
 
@@ -314,7 +333,7 @@ p {
 
 .category__btn.active,
 .category__btn:hover {
-  background-color: var(--color-pink);
+  background-color: var(--color-red);
   color: var(--color-white);
 }
 .category__btn.active .category__count,
@@ -464,7 +483,7 @@ p {
 
 /* contact */
 #contact {
-  background-color: var(--color-pink);
+  background-color: var(--color-red);
 }
 
 .contact__title,
@@ -491,7 +510,7 @@ p {
   top: 600px;
   right: 32px;
   font-size: 24px;
-  background-color: var(--color-pink);
+  background-color: var(--color-red);
   color: var(--color-white);
   border-radius: 50%;
   padding: 10px;
@@ -523,7 +542,10 @@ p {
   #navbar {
     flex-direction: column;
     align-items: flex-start;
-    background-color: var(--color-pink);
+    background-color: var(--color-red);
+  }
+  .nav__text {
+    color: var(--color-white);
   }
   .navbar__menu {
     flex-direction: column;
@@ -544,6 +566,7 @@ p {
     right: 16px;
     font-size: var(--font-medium);
   }
+
   .about__majors {
     flex-direction: column;
     margin-top: 30px;
