@@ -87,9 +87,7 @@ h3 {
 p {
   font-size: var(--font-regular);
   font-weight: var(--font-regular);
-  color: var(--color-dark-grey);
   margin: 4px 0;
-  text-align: left;
 }
 
 /* Navbar */
@@ -212,6 +210,9 @@ p {
   padding-top: 70px;
   text-align: center;
   margin: auto;
+}
+.section-left {
+  text-align: left;
 }
 .section__container {
   max-width: 1200px;
