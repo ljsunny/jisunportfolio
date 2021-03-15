@@ -146,10 +146,10 @@ window.addEventListener("scroll", () => {
   } else if (scrollh < 2200) {
     active.classList.remove("active");
     navElement[2].classList.add("active");
-  } else if (scrollh < 3800) {
+  } else if (scrollh < 4052) {
     active.classList.remove("active");
     navElement[3].classList.add("active");
-  } else if (scrollh < 4300) {
+  } else if (scrollh < 4388) {
     active.classList.remove("active");
     navElement[4].classList.add("active");
   } else {
